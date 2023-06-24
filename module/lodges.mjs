@@ -1,12 +1,12 @@
 // Import document classes.
-import { BoilerplateActor } from "./documents/actor.mjs";
-import { BoilerplateItem } from "./documents/item.mjs";
+import { LodgesActor } from "./documents/actor.mjs";
+import { LodgesItem } from "./documents/item.mjs";
 // Import sheet classes.
-import { BoilerplateActorSheet } from "./sheets/actor-sheet.mjs";
-import { BoilerplateItemSheet } from "./sheets/item-sheet.mjs";
+import { LodgesActorSheet } from "./sheets/actor-sheet.mjs";
+import { LodgesItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
-import { BOILERPLATE } from "./helpers/config.mjs";
+import { LODGES } from "./helpers/config.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -16,14 +16,14 @@ Hooks.once('init', async function() {
 
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
-  game.boilerplate = {
-    BoilerplateActor,
-    BoilerplateItem,
+  game.lodges = {
+    LodgesActor,
+    LodgesItem,
     rollItemMacro
   };
 
   // Add custom constants for configuration.
-  CONFIG.BOILERPLATE = BOILERPLATE;
+  CONFIG.LODGES = LODGES;
 
   /**
    * Set an initiative formula for the system
@@ -35,14 +35,14 @@ Hooks.once('init', async function() {
   };
 
   // Define custom Document classes
-  CONFIG.Actor.documentClass = BoilerplateActor;
-  CONFIG.Item.documentClass = BoilerplateItem;
+  CONFIG.Actor.documentClass = LodgesActor;
+  CONFIG.Item.documentClass = LodgesItem;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("boilerplate", BoilerplateActorSheet, { makeDefault: true });
+  Actors.registerSheet("lodges", LodgesActorSheet, { makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("boilerplate", BoilerplateItemSheet, { makeDefault: true });
+  Items.registerSheet("lodges", LodgesItemSheet, { makeDefault: true });
 
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
@@ -97,7 +97,7 @@ async function createItemMacro(data, slot) {
   const item = await Item.fromDropData(data);
 
   // Create the macro command using the uuid.
-  const command = `game.boilerplate.rollItemMacro("${data.uuid}");`;
+  const command = `game.lodges.rollItemMacro("${data.uuid}");`;
   let macro = game.macros.find(m => (m.name === item.name) && (m.command === command));
   if (!macro) {
     macro = await Macro.create({
@@ -105,7 +105,7 @@ async function createItemMacro(data, slot) {
       type: "script",
       img: item.img,
       command: command,
-      flags: { "boilerplate.itemMacro": true }
+      flags: { "lodges.itemMacro": true }
     });
   }
   game.user.assignHotbarMacro(macro, slot);

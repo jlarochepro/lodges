@@ -1,56 +1,72 @@
 {
   "Actor": {
-    "types": ["character", "npc"],
+    "types": ["character", "npc", "lodge"],
     "templates": {
       "base": {
-        "health": {
-          "value": 10,
-          "min": 0,
-          "max": 10
-        },
-        "power": {
-          "value": 5,
-          "min": 0,
-          "max": 5
-        },
-        "biography": ""
+        "description": ""
       }
     },
     "character": {
       "templates": ["base"],
-      "attributes": {
-        "level": {
-          "value": 1
-        }
+      "details": {
+        "era": "",
+        "title": ""
       },
-      "abilities": {
-        "str": {
-          "value": 10
+      "aspects": {
+        "sociability": {
+          "value": 1,
+          "max": 5
         },
-        "dex": {
-          "value": 10
+        "combativity": {
+          "value": 1,
+          "max": 5
         },
-        "con": {
-          "value": 10
+        "curiosity": {
+          "value": 1,
+          "max": 5
         },
-        "int": {
-          "value": 10
+        "creativity": {
+          "value": 1,
+          "max": 5
         },
-        "wis": {
-          "value": 10
-        },
-        "cha": {
-          "value": 10
+        "occult": {
+          "value": 1,
+          "max": 5
         }
       }
     },
     "npc": {
       "templates": ["base"],
-      "cr": 0
+      "details": {
+        "era": "",
+        "occupation": ""
+      }
+    },
+    "lodge": {
+      "templates": ["base"],
+      "details": {
+        "praxis": "",
+        "cover": "",
+        "paradigm": "",
+        "contract": "",
+        "curiosities": "",
+        "occult": {
+          "value": 1,
+          "max": 5
+        },
+        "contacts": {
+          "value": 5,
+          "max": 10
+        },
+        "places": {
+          "value": 5,
+          "max": 10
+        }
+      }
     }
   },
   "Item": {
-    "types": ["item", "feature", "spell"],
+    "types": ["item", "artefact", "feature"],
     "templates": {
       "base": {
         "description": ""
@@ -58,16 +74,20 @@
     },
     "item": {
       "templates": ["base"],
-      "quantity": 1,
-      "weight": 0,
-      "formula": "d20 + @str.mod + ceil(@lvl / 2)"
+      "sociability": 0,
+      "combativity": 0,
+      "curiosity": 0,
+      "creativity": 0,
+      "occult": 0
+    },
+    "artefact": {
+      "templates": ["base"],
+      "kingdom": "",
+      "occult": 0
     },
     "feature": {
-      "templates": ["base"]
-    },
-    "spell": {
       "templates": ["base"],
-      "spellLevel": 1
+      "rank": 0
     }
   }
 }

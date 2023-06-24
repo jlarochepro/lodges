@@ -1,18 +1,20 @@
 {
-  "id": "boilerplate",
-  "title": "Boilerplate",
-  "description": "The Boilerplate system for FoundryVTT!",
-  "version": "1.2.0",
+  "id": "lodges",
+  "title": "Lodges",
+  "description": "Lodges system for FoundryVTT",
+  "version": "0.0.1",
   "compatibility": {
     "minimum": 10,
     "verified": "10.287",
     "maximum": 10
   },
   "authors": [{
-    "name": "Asacolips"
+    "name": "Julien Laroche",
+    "url": "https://jlaroche.fr",
+    "flags": {}
   }],
-  "esmodules": ["module/boilerplate.mjs"],
-  "styles": ["css/boilerplate.css"],
+  "esmodules": ["module/lodges.mjs"],
+  "styles": ["css/lodges.css"],
   "scripts": [],
   "packs": [],
   "languages": [
