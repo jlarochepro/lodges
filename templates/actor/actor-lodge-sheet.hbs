@@ -1,0 +1,71 @@
+<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+      <div class="header-fields">
+        <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'LODGES.name' }}"/></h1>
+        <div class="resources grid grid-3col">
+  
+            <div class="resource flex-group-center">
+                <label for="system.details.praxis.value" class="resource-label">{{ localize 'LODGES.praxis' }}</label>
+                <div class="resource-content flexrow flex-center flex-between">
+                <input type="text" name="system.details.praxis.value" value="{{system.details.praxis.value}}" data-dtype="String"/>
+                </div>
+            </div>
+    
+            <div class="resource flex-group-center">
+                <label for="system.details.cover.value" class="resource-label">{{ localize 'LODGES.cover' }}</label>
+                <div class="resource-content flexrow flex-center flex-between">
+                <input type="text" name="system.details.cover.value" value="{{system.details.cover.value}}" data-dtype="String"/>
+                </div>
+            </div>
+    
+            <div class="resource flex-group-center">
+                <label for="system.details.paradigm.value" class="resource-label">{{ localize 'LODGES.paradigm' }}</label>
+                <div class="resource-content flexrow flex-center flex-between">
+                <input type="text" name="system.details.paradigm.value" value="{{system.details.paradigm.value}}" data-dtype="String"/>
+                </div>
+            </div>
+    
+          </div>
+      </div>
+    </header>
+  
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+      {{!-- Default tab is specified in actor-sheet.mjs --}}
+      <a class="item" data-tab="description">{{ localize 'LODGES.description' }}</a>
+      <a class="item" data-tab="details">{{ localize 'LODGES.occult' }}</a>
+      <a class="item" data-tab="curiosities">{{ localize 'LODGES.curiosities' }}</a>
+      <a class="item" data-tab="artefacts">{{ localize 'LODGES.artefacts' }}</a>
+    </nav>
+  
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+  
+      {{!-- Description Tab --}}
+      <div class="tab description" data-group="primary" data-tab="description">
+        {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+      </div>
+
+      {{!-- Details Tab --}}
+      <div class="tab details" data-group="primary" data-tab="details">
+        {{> "systems/lodges/templates/actor/parts/actor-lodge-details.hbs"}}
+      </div>
+
+      {{!-- Curiosities Tab --}}
+      <div class="tab curiosities" data-group="primary" data-tab="curiosities">
+        <h2>{{ localize 'LODGES.curiosities' }}</h2>
+        {{editor system.details.curiosities target="system.details.curiosities" rollData=rollData button=true owner=owner editable=editable}}
+      </div>
+
+      {{!-- Owned Artefacts Tab --}}
+      <div class="tab artefacts" data-group="primary" data-tab="artefacts">
+        {{> "systems/lodges/templates/actor/parts/actor-artefacts.hbs"}}
+      </div>
+  
+    </section>
+  </form>
+  
+  

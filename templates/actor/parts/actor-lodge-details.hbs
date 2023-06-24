@@ -1,0 +1,34 @@
+<section class="grid grid-3col">
+    <aside class="sidebar">
+      <div class="resources">
+
+        <div class="resource flex-group-center">
+          <label for="system.details.occult.value" class="resource-label">{{ localize 'LODGES.occult' }}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.details.occult.value" value="{{system.details.occult.value}}" data-dtype="Number"/>
+          </div>
+        </div>
+        <br>
+        <div class="resource flex-group-center">
+          <label for="system.details.contacts.value" class="resource-label">{{ localize 'LODGES.contacts' }}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.details.contacts.value" value="{{system.details.contacts.value}}" data-dtype="Number"/>
+          </div>
+        </div>
+        <br>
+        <div class="resource flex-group-center">
+          <label for="system.details.places.value" class="resource-label">{{ localize 'LODGES.places' }}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.details.places.value" value="{{system.details.places.value}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+      </div>
+    </aside>
+
+    <section class="main grid-span-2">
+      <h2>{{ localize 'LODGES.contract' }}</h2>
+      {{editor system.details.contract target="system.details.contract" rollData=rollData button=true owner=owner editable=editable}}
+    </section>
+
+</section>

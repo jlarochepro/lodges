@@ -1,0 +1,31 @@
+<ol class="items-list">
+    <li class="item flexrow items-header">
+        <div class="item-name">{{ localize 'LODGES.name' }}</div>
+        <div class="item-formula">{{ localize 'LODGES.kingdom' }}</div>
+        <div class="item-formula">{{ localize 'LODGES.occult' }}</div>
+        <div class="item-controls">
+        <a class="item-control item-create" title="{{ localize 'LODGES.artefactCreate' }}" data-type="artefact"><i class="fas fa-plus"></i> {{ localize 'LODGES.add' }}</a>
+        </div>
+    </li>
+    {{#each artefacts as |item id|}}
+    {{!-- {{#lodge-itemContext item as |ctx|}} --}}
+        <li class="item flexrow {{#if ctx.isExpanded}}expanded{{/if}}" data-item-id="{{item._id}}">
+            <div class="item-name flexrow rollable">
+                <div class="item-image">
+                <a class="rollable" data-roll-type="item"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a>
+                </div>
+                <h4>{{item.name}}</h4>
+            </div>
+            <div class="item-formula item-prop">{{system.kingdom}}</div>
+            <div class="item-formula item-prop">{{system.aspects.occult.value}}</div>
+            <div class="item-controls">
+                <a class="item-control item-edit" title="{{ localize 'LODGES.artefactEdit' }}"><i class="fas fa-edit"></i></a>
+                <a class="item-control item-delete" title="{{ localize 'LODGES.artefactDelete' }}"><i class="fas fa-trash"></i></a>
+            </div>
+            {{#if ctx.isExpanded}}
+                {{system.description}}
+                {{> "system.description" (lookup @root.expandedData item.id)}}
+            {{/if}}
+        </li>
+    {{/each}}
+</ol>

@@ -13,7 +13,7 @@ export class LodgesActorSheet extends ActorSheet {
       template: "systems/lodges/templates/actor/actor-sheet.hbs",
       width: 600,
       height: 600,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
+      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
     });
   }
 
@@ -50,6 +50,11 @@ export class LodgesActorSheet extends ActorSheet {
       this._prepareItems(context);
     }
 
+    // Prepare Lodge data and items.
+    if (actorData.type == 'lodge') {
+      this._prepareItems(context);
+    }
+
     // Add roll data for TinyMCE editors.
     context.rollData = context.actor.getRollData();
 
@@ -68,8 +73,12 @@ export class LodgesActorSheet extends ActorSheet {
    */
   _prepareCharacterData(context) {
     // Handle ability scores.
-    for (let [k, v] of Object.entries(context.system.abilities)) {
-      v.label = game.i18n.localize(CONFIG.LODGES.abilities[k]) ?? k;
+    // for (let [k, v] of Object.entries(context.system.abilities)) {
+    //   v.label = game.i18n.localize(CONFIG.LODGES.abilities[k]) ?? k;
+    // }
+    // Handle aspects scores
+    for (let [k, v] of Object.entries(context.system.aspects)) {
+      v.label = game.i18n.localize(CONFIG.LODGES.aspects[k]) ?? k;
     }
   }
 
@@ -84,6 +93,7 @@ export class LodgesActorSheet extends ActorSheet {
     // Initialize containers.
     const gear = [];
     const features = [];
+    const artefacts = [];
     const spells = {
       0: [],
       1: [],
@@ -108,6 +118,10 @@ export class LodgesActorSheet extends ActorSheet {
       else if (i.type === 'feature') {
         features.push(i);
       }
+      // Append to artefacts.
+      else if (i.type === 'artefact') {
+        artefacts.push(i);
+      }
       // Append to spells.
       else if (i.type === 'spell') {
         if (i.system.spellLevel != undefined) {
@@ -119,6 +133,7 @@ export class LodgesActorSheet extends ActorSheet {
     // Assign and return
     context.gear = gear;
     context.features = features;
+    context.artefacts = artefacts;
     context.spells = spells;
   }
 

@@ -2,15 +2,41 @@
   <header class="sheet-header">
     <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
     <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
-      <div class="grid grid-2col">
-        <div class="resource">
-          <label class="resource-label">Quantity</label>
-          <input type="text" name="system.quantity" value="{{system.quantity}}" data-dtype="Number"/>
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'LODGES.name' }}"/></h1>
+      <div class="grid grid-5col">
+        <div class="resource flex-group-center">
+          <label for="system.aspects.sociability.value" class="resource-label">{{ localize 'LODGES.sociability' }}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.aspects.sociability.value" value="{{system.aspects.sociability.value}}" data-dtype="Number"/>
+          </div>
         </div>
-        <div class="resource">
-          <label class="resource-label">Weight</label>
-          <input type="text" name="system.weight" value="{{system.weight}}" data-dtype="Number"/>
+
+        <div class="resource flex-group-center">
+          <label for="system.aspects.combativity.value" class="resource-label">{{ localize 'LODGES.combativity' }}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.aspects.combativity.value" value="{{system.aspects.combativity.value}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.aspects.curiosity.value" class="resource-label">{{ localize 'LODGES.curiosity' }}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.aspects.curiosity.value" value="{{system.aspects.curiosity.value}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.aspects.creativity.value" class="resource-label">{{ localize 'LODGES.creativity' }}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.aspects.creativity.value" value="{{system.aspects.creativity.value}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.aspects.occult.value" class="resource-label">{{ localize 'LODGES.occult' }}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.aspects.occult.value" value="{{system.aspects.occult.value}}" data-dtype="Number"/>
+          </div>
         </div>
       </div>
     </div>
@@ -18,8 +44,7 @@
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
-    <a class="item" data-tab="description">Description</a>
-    <a class="item" data-tab="attributes">Attributes</a>
+    <a class="item" data-tab="description">{{ localize "LODGES.description" }}</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -31,13 +56,5 @@
       {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}
     </div>
 
-    {{!-- Attributes Tab --}}
-    <div class="tab attributes" data-group="primary" data-tab="attributes">
-      {{!-- As you add new fields, add them in here! --}}
-      <div class="resource">
-        <label class="resource-label">Roll Formula</label>
-        <input type="text" name="system.formula" value="{{system.formula}}" data-dtype="String"/>
-      </div>
-    </div>
   </section>
 </form>

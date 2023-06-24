@@ -1,10 +1,12 @@
 {
   "LODGES.effect": "Effect",
   "LODGES.effects": "Effects",
-  "LODGES.EffectCreate": "Create Effect",
-  "LODGES.EffectToggle": "Toggle Effect",
-  "LODGES.EffectEdit": "Edit Effect",
-  "LODGES.EffectDelete": "Delete Effect",
+  "LODGES.effectCreate": "Create Effect",
+  "LODGES.effectToggle": "Toggle Effect",
+  "LODGES.effectEdit": "Edit Effect",
+  "LODGES.effectDelete": "Delete Effect",
+  "LODGES.source": "Source",
+  "LODGES.duration": "Duration",
 
   "LODGES.name": "Name",
 
@@ -54,5 +56,5 @@
   "LODGES.kingdoms": "Kingdoms",
   "LODGES.rank": "Rank",
 
-  "LODGES.Add": "Add"
+  "LODGES.add": "Add"
 }
