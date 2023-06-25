@@ -45,11 +45,11 @@
     "lodge": {
       "templates": ["base"],
       "details": {
+        "records": "",
         "praxis": "",
         "cover": "",
         "paradigm": "",
         "contract": "",
-        "curiosities": "",
         "occult": {
           "value": 1,
           "max": 5

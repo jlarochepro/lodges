@@ -7,28 +7,50 @@
         <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'LODGES.name' }}"/></h1>
         <div class="resources grid grid-3col">
   
-            <div class="resource flex-group-center">
-                <label for="system.details.praxis.value" class="resource-label">{{ localize 'LODGES.praxis' }}</label>
-                <div class="resource-content flexrow flex-center flex-between">
-                <input type="text" name="system.details.praxis.value" value="{{system.details.praxis.value}}" data-dtype="String"/>
-                </div>
-            </div>
-    
-            <div class="resource flex-group-center">
-                <label for="system.details.cover.value" class="resource-label">{{ localize 'LODGES.cover' }}</label>
-                <div class="resource-content flexrow flex-center flex-between">
-                <input type="text" name="system.details.cover.value" value="{{system.details.cover.value}}" data-dtype="String"/>
-                </div>
-            </div>
-    
-            <div class="resource flex-group-center">
-                <label for="system.details.paradigm.value" class="resource-label">{{ localize 'LODGES.paradigm' }}</label>
-                <div class="resource-content flexrow flex-center flex-between">
-                <input type="text" name="system.details.paradigm.value" value="{{system.details.paradigm.value}}" data-dtype="String"/>
-                </div>
-            </div>
-    
+          <div class="resource flex-group-center">
+              <label for="system.details.praxis.value" class="resource-label">{{ localize 'LODGES.praxis' }}</label>
+              <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.details.praxis.value" value="{{system.details.praxis.value}}" data-dtype="String"/>
+              </div>
           </div>
+  
+          <div class="resource flex-group-center">
+              <label for="system.details.cover.value" class="resource-label">{{ localize 'LODGES.cover' }}</label>
+              <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.details.cover.value" value="{{system.details.cover.value}}" data-dtype="String"/>
+              </div>
+          </div>
+  
+          <div class="resource flex-group-center">
+              <label for="system.details.paradigm.value" class="resource-label">{{ localize 'LODGES.paradigm' }}</label>
+              <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.details.paradigm.value" value="{{system.details.paradigm.value}}" data-dtype="String"/>
+              </div>
+          </div>
+    
+        </div>
+        <div class="resources grid grid-3col">
+          <div class="resource flex-group-center">
+            <label for="system.details.occult.value" class="resource-label">{{ localize 'LODGES.occult' }}</label>
+            <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.details.occult.value" value="{{system.details.occult.value}}" data-dtype="Number"/>
+            </div>
+          </div>
+
+          <div class="resource flex-group-center">
+            <label for="system.details.contacts.value" class="resource-label">{{ localize 'LODGES.contacts' }}</label>
+            <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.details.contacts.value" value="{{system.details.contacts.value}}" data-dtype="Number"/>
+            </div>
+          </div>
+
+          <div class="resource flex-group-center">
+            <label for="system.details.places.value" class="resource-label">{{ localize 'LODGES.places' }}</label>
+            <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.details.places.value" value="{{system.details.places.value}}" data-dtype="Number"/>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
   
@@ -36,8 +58,7 @@
     <nav class="sheet-tabs tabs" data-group="primary">
       {{!-- Default tab is specified in actor-sheet.mjs --}}
       <a class="item" data-tab="description">{{ localize 'LODGES.description' }}</a>
-      <a class="item" data-tab="details">{{ localize 'LODGES.occult' }}</a>
-      <a class="item" data-tab="curiosities">{{ localize 'LODGES.curiosities' }}</a>
+      <a class="item" data-tab="details">{{ localize 'LODGES.details' }}</a>
       <a class="item" data-tab="artefacts">{{ localize 'LODGES.artefacts' }}</a>
     </nav>
   
@@ -52,12 +73,6 @@
       {{!-- Details Tab --}}
       <div class="tab details" data-group="primary" data-tab="details">
         {{> "systems/lodges/templates/actor/parts/actor-lodge-details.hbs"}}
-      </div>
-
-      {{!-- Curiosities Tab --}}
-      <div class="tab curiosities" data-group="primary" data-tab="curiosities">
-        <h2>{{ localize 'LODGES.curiosities' }}</h2>
-        {{editor system.details.curiosities target="system.details.curiosities" rollData=rollData button=true owner=owner editable=editable}}
       </div>
 
       {{!-- Owned Artefacts Tab --}}
