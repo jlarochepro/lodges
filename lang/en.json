@@ -17,8 +17,10 @@
 
   "LODGES.description": "Description",
   "LODGES.era": "Era",
-  "LODGES.title": "Title",
+  "LODGES.role": "Occult Role",
   "LODGES.occupation": "Occupation",
+  "LODGES.secular": "Secular",
+  "LODGES.secular_occupation": "Secular Occupation",
   "LODGES.details": "Details",
   "LODGES.praxis": "Praxis",
   "LODGES.cover": "Cover",
@@ -29,8 +31,9 @@
   "LODGES.sociability": "Sociability",
   "LODGES.combativity": "Combativity",
   "LODGES.curiosity": "Curiosity",
-  "LODGES.creativity": "Creativity",
+  "LODGES.ingenuity": "Ingenuity",
   "LODGES.occult": "Occult",
+  "LODGES.quirk": "Quirk",
 
   "LODGES.contacts": "Contacts",
   "LODGES.places": "Places",

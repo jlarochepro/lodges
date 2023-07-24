@@ -35,9 +35,9 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.aspects.creativity.value" class="resource-label">{{ localize 'LODGES.creativity' }}</label>
+          <label for="system.aspects.ingenuity.value" class="resource-label">{{ localize 'LODGES.ingenuity' }}</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.aspects.creativity.value" value="{{system.aspects.creativity.value}}" data-dtype="Number"/>
+          <input type="text" name="system.aspects.ingenuity.value" value="{{system.aspects.ingenuity.value}}" data-dtype="Number"/>
           </div>
         </div>
 
@@ -49,19 +49,69 @@
         </div>
 
       </div>
-      <div class="resources grid grid-2col">
 
+      <div class="resources grid grid-5col">
+
+        {{!-- "flex-group-center" is also defined in the _grid.scss file
+        and it will add a small amount of padding, a border, and will
+        center all of its child elements content and text. --}}
         <div class="resource flex-group-center">
-          <label for="system.details.title.value" class="resource-label">{{ localize 'LODGES.title' }}</label>
+          <label for="system.aspects.sociability.quirk" class="resource-label">{{ localize 'LODGES.quirk' }}</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.details.title.value" value="{{system.details.title.value}}" data-dtype="String"/>
+          <input type="text" name="system.aspects.sociability.quirk" value="{{system.aspects.sociability.quirk}}" data-dtype="String"/>
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.details.era.value" class="resource-label">{{ localize 'LODGES.era' }}</label>
+          <label for="system.aspects.combativity.quirk" class="resource-label">{{ localize 'LODGES.quirk' }}</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.details.era.value" value="{{system.details.era.value}}" data-dtype="String"/>
+          <input type="text" name="system.aspects.combativity.quirk" value="{{system.aspects.combativity.quirk}}" data-dtype="String"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.aspects.curiosity.quirk" class="resource-label">{{ localize 'LODGES.quirk' }}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.aspects.curiosity.quirk" value="{{system.aspects.curiosity.quirk}}" data-dtype="String"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.aspects.ingenuity.quirk" class="resource-label">{{ localize 'LODGES.quirk' }}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.aspects.ingenuity.quirk" value="{{system.aspects.ingenuity.quirk}}" data-dtype="String"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.aspects.occult.contract" class="resource-label">{{ localize 'LODGES.contract' }}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.aspects.occult.contract" value="{{system.aspects.occult.contract}}" data-dtype="String"/>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="resources grid grid-3col">
+
+        <div class="resource flex-group-center">
+          <label for="system.details.role" class="resource-label">{{ localize 'LODGES.role' }}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.details.role" value="{{system.details.role}}" data-dtype="String"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.details.occupation" class="resource-label">{{ localize 'LODGES.secular_occupation' }}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.details.occupation" value="{{system.details.occupation}}" data-dtype="String"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.details.era" class="resource-label">{{ localize 'LODGES.era' }}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.details.era" value="{{system.details.era}}" data-dtype="String"/>
           </div>
         </div>
 

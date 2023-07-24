@@ -10,26 +10,32 @@
       "templates": ["base"],
       "details": {
         "era": "",
-        "title": ""
+        "role": "",
+        "occupation": ""
       },
       "aspects": {
         "sociability": {
+          "quirk": "",
           "value": 1,
           "max": 5
         },
         "combativity": {
+          "quirk": "",
           "value": 1,
           "max": 5
         },
         "curiosity": {
+          "quirk": "",
           "value": 1,
           "max": 5
         },
         "creativity": {
+          "quirk": "",
           "value": 1,
           "max": 5
         },
         "occult": {
+          "contract": "",
           "value": 1,
           "max": 5
         }

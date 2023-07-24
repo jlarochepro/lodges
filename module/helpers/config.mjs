@@ -8,6 +8,6 @@ export const LODGES = {};
   "soc": "LODGES.sociability",
   "com": "LODGES.combativity",
   "cur": "LODGES.curiosity",
-  "cre": "LODGES.creativity",
+  "cre": "LODGES.ingenuity",
   "occ": "LODGES.occult"
 };
