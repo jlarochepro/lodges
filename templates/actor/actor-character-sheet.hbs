@@ -4,7 +4,18 @@
   <header class="sheet-header">
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
     <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'LODGES.name' }}"/></h1>
+      <div class="resources grid grid-3col">
+        <div class="resource flex-group-center grid-span-2">
+          <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'LODGES.name' }}"/></h1>
+        </div>
+        <div class="resource flex-group-center">
+          <label for="system.details.archetype" class="resource-label">{{ localize 'LODGES.archetype' }}</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.details.archetype" value="{{system.details.archetype}}" data-dtype="String"/>
+          </div>
+        </div>
+      </div>
+
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
       from 1 to 12 and will create that number of columns.  --}}
@@ -116,6 +127,7 @@
         </div>
 
       </div>
+
     </div>
   </header>
 

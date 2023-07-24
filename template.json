@@ -9,6 +9,7 @@
     "character": {
       "templates": ["base"],
       "details": {
+        "archetype": "",
         "era": "",
         "role": "",
         "occupation": ""
