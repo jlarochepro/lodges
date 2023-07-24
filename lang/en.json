@@ -36,6 +36,11 @@
   "LODGES.occult": "Occult",
   "LODGES.quirk": "Quirk",
 
+  "LODGES.hearts": "Hearts",
+  "LODGES.spades": "Spades",
+  "LODGES.clubs": "Clubs",
+  "LODGES.diamonds": "Diamonds",
+
   "LODGES.contacts": "Contacts",
   "LODGES.places": "Places",
   "LODGES.records": "Records",

@@ -35,6 +35,11 @@
     "LODGES.ingenuity": "Ingéniosité",
     "LODGES.occult": "Occulte",
     "LODGES.quirk": "Travers",
+
+    "LODGES.hearts": "Coeur",
+    "LODGES.spades": "Pique",
+    "LODGES.clubs": "Trèfle",
+    "LODGES.diamonds": "Carreau",
   
     "LODGES.contacts": "Contacts",
     "LODGES.places": "Lieux",
