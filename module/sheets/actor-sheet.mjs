@@ -11,7 +11,7 @@ export class LodgesActorSheet extends ActorSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["lodges", "sheet", "actor"],
       template: "systems/lodges/templates/actor/actor-sheet.hbs",
-      width: 600,
+      width: 800,
       height: 600,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
     });
