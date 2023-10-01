@@ -30,7 +30,7 @@
           "value": 1,
           "max": 5
         },
-        "creativity": {
+        "ingenuity": {
           "quirk": "",
           "value": 1,
           "max": 5
@@ -84,7 +84,7 @@
       "sociability": 0,
       "combativity": 0,
       "curiosity": 0,
-      "creativity": 0,
+      "ingenuity": 0,
       "occult": 0
     },
     "artefact": {
